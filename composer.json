@@ -1,0 +1,56 @@
+{
+	"name":"may17/contao-fcm-bundle",
+	"description":"Contao 4 Firebase Cloud Messaging Bundle",
+	"keywords":["contao","firebase","webpush", "pwa"],
+	"type":"contao-bundle",
+	"homepage":"http://may17.de",
+    "license":"LGPL-3.0-or-later",
+	"version": "dev",
+	"minimum-stabilit": "dev",
+	"authors":[
+		{
+			"name":"Joe Ray Gregory",
+			"homepage":"http://may17.de",
+			"role":"Developer"
+		}
+	],
+	"support":{
+		"issues":"https://github.com/may17/contao-fcm-bundle/issues"
+	},
+	"require":{
+		"php": "^5.6|^7.0",
+        "contao/core-bundle": "~4.3"
+	},
+	"require-dev": {
+		"contao/manager-plugin": "^2.0"
+	},
+	"conflict": {
+		"contao/manager-plugin": "<2.0 || >=3.0",
+		"symfony/symfony": "3.2.7"
+	},
+	"autoload": {
+		"psr-4": {
+			"May17\\FcmBundle\\": "src/"
+		},
+        "classmap": [
+            "src/Resources/contao/"
+		],
+		"exclude-from-classmap": [
+            "src/Resources/contao/config/",
+            "src/Resources/contao/dca/",
+            "src/Resources/contao/languages/",
+            "src/Resources/contao/templates/"
+		]
+  	},
+	"extra": {
+		"contao": {
+			"transifex": {
+				"project": "contao-fcm-bundle",
+				"prefix": "master-",
+				"languages_cto": "src/Resources/contao/languages",
+				"languages_tx": ".tx"
+			}
+		},
+		"contao-manager-plugin": "May17\\FcmBundle\\ContaoManager\\Plugin"
+	}
+}
